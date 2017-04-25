@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="1dd057d9cde9a5182bc87665843c8f053b2ac32e">
+        sha1="2f58cff4972a0b74243d3cfaecd2387fc3d09054">
         <dex dex="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b19c91676d64bbf07474693b56cc1855fc99e51f/classes.dex" />
     </item>
     <item
@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3b0ca4e6242eff53b467450232441fa7cc382f88">
+        sha1="e787390755ae5285b4e5527ef230fd4829b42c75">
         <dex dex="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7f0517d837ee5214b25c5f9ae2be9ef3afe4bbb0/classes.dex" />
     </item>
     <item

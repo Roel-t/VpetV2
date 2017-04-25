@@ -62,10 +62,10 @@ public class MainMenuScreen implements Screen {
         else
             Cont = "Continue";
 
-        TextButton button = new TextButton(Cont,skin,"default");
-        button.setColor(Color.CYAN);
+        TextButton MainButton = new TextButton(Cont,skin,"default");
+        MainButton.setColor(Color.CYAN);
         TextButton setting = new TextButton("Settings",skin,"default");
-        button.setColor(Color.CYAN);
+
 
 
         Label WelcomeLabel = new Label("Welcome To VPet!", skin);
@@ -75,26 +75,24 @@ public class MainMenuScreen implements Screen {
         WelcomeLabel.setColor(Color.BLACK);
 
 
-        button.addListener(new ClickListener() {
+        MainButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 if(!SharedPref.getBoolean("ContinueGame"))
                     game.setScreen(new NewGameScreen(game,nativep));
                 else
                 {
-                    if(updateStatus())
-                    {
+                    if(updateStatus())                                  //Pet Died
                         game.setScreen(new DeathScreen(game,nativep));
-                    }
                     else
-                        game.setScreen(new GameScreen(game));
+                        game.setScreen(new GameScreen(game,nativep));           //Pet Alive
                 }
             }
         });
 
         table.add(WelcomeLabel).padBottom(stage.getHeight()/4);
         table.row();
-        table.add(button);
+        table.add(MainButton);
         table.row();
         table.add(setting).pad(200,0,0,0);
 

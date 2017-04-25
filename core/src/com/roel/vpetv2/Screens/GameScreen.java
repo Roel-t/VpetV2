@@ -19,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.roel.vpetv2.NativePlatform;
 import com.roel.vpetv2.PetStatus.HealthStatus;
 import com.roel.vpetv2.PetStatus.HungerStatus;
 import com.roel.vpetv2.PetCharacter;
@@ -56,16 +57,16 @@ public class GameScreen implements Screen {
     PetCharacter pt = new PetCharacter();
     private String name;
     private Texture background;
-
+    private NativePlatform nativep;
 
     public long elapsedtime;
 
-    public GameScreen (final VirtualPet gam)
+    public GameScreen (final VirtualPet gam, NativePlatform np)
     {
         this.game = gam;
-
+        nativep = np;
         mSharedPreferences = Gdx.app.getPreferences("General");
-        name = mSharedPreferences.getString("Name");
+        name = mSharedPreferences.getString("Name");                //Get Pet Name
 
         skin = new Skin(Gdx.files.internal("uiskin.json"));
         skin.getFont("default-font").getData().setScale(.6f,.6f);
@@ -80,10 +81,12 @@ public class GameScreen implements Screen {
 
         Label PetName = new Label(name, skin);
         PetName.setColor(Color.BLACK);
+
         table.setWidth(stage.getWidth());
         table.setPosition(0,Gdx.graphics.getHeight());
         table.align(Align.center);
         table.add(PetName).padTop((skin.getFont("default-font").getSpaceWidth())*4);
+        table.row();
 
         stage.addActor(table);
 
@@ -136,12 +139,13 @@ public class GameScreen implements Screen {
         {
             startTime=System.currentTimeMillis();
             Hstat.updateStats();
-            HEstat.updateStats(Hstat.foodStat);
+            if(HEstat.updateStats(Hstat.foodStat))
+                game.setScreen(new DeathScreen(game,nativep));  //Pet Died
+
 
         }
 
         game.batch.begin();
-
         game.batch.draw(background,0,0, Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         game.batch.end();
 

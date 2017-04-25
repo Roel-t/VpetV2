@@ -76,8 +76,6 @@ public class NewGameScreen implements Screen{
         table.setPosition(0,Gdx.graphics.getHeight()/3);
 
 
-
-
         Label nameLabel = new Label("Pet Name:", skin);
         final TextField nameText = new TextField("", skin);
 
@@ -106,7 +104,7 @@ public class NewGameScreen implements Screen{
                     String name = nameText.getText();
                     SharedPref.putString("Name",name);
                     SharedPref.flush();
-                    game.setScreen(new GameScreen(game));
+                    game.setScreen(new GameScreen(game,nativep));
                 }
             }
         });
@@ -118,8 +116,6 @@ public class NewGameScreen implements Screen{
         table.row();
 
         stage.addActor(table);
-
-
 
 
 
@@ -188,6 +184,7 @@ public class NewGameScreen implements Screen{
         stage.dispose();
         game.dispose();
         skin.dispose();
+
 
 
 
