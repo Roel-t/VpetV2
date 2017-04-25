@@ -1,0 +1,80 @@
+
+slimeanimation.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Sprites_
+  rotate: false
+  xy: 1, 447
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 0
+Sprites_
+  rotate: false
+  xy: 1, 1
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 1
+Sprites_
+  rotate: false
+  xy: 330, 447
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 2
+Sprites_
+  rotate: false
+  xy: 330, 1
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 3
+Sprites_
+  rotate: false
+  xy: 659, 447
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 4
+Sprites_
+  rotate: false
+  xy: 659, 1
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 5
+
+slimeanimation2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Sprites_
+  rotate: false
+  xy: 1, 447
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 6
+Sprites_
+  rotate: false
+  xy: 1, 1
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 7
+Sprites_
+  rotate: false
+  xy: 330, 447
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 8
+Sprites_
+  rotate: false
+  xy: 330, 1
+  size: 327, 444
+  orig: 327, 444
+  offset: 0, 0
+  index: 9
