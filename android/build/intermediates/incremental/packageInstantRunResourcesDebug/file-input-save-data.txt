@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Apr 25 00:44:44 CDT 2017
+#Tue Apr 25 09:31:34 CDT 2017
 25.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/healthSprites/ht3.png
 25.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 22.set=ASSET
@@ -14,7 +14,7 @@
 30.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 14.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 16.set=ASSET
-count=40
+count=41
 6.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/healthSprites/ht4.png
 6.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 26.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/ultrasad/ultrasadanimation.atlas
@@ -67,7 +67,7 @@ count=40
 28.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 14.set=ASSET
 2.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/healthSprites/ht1.png
-39.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/testfont3.png
+39.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/ded.png
 2.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 39.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 22.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/frame.png
@@ -94,6 +94,7 @@ count=40
 23.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/hungerSprites/h1_redo.png
 29.set=ASSET
 23.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
+40.set=ASSET
 34.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/hungerSprites/h2.png
 34.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 18.set=ASSET
@@ -106,8 +107,10 @@ count=40
 4.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/ultrasad/ultrasad_idle.png
 4.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 23.set=ASSET
+40.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/testfont3.png
 24.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/back.png
 9.set=ASSET
+40.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 39.set=ASSET
 24.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 12.set=ANDROID_RESOURCE

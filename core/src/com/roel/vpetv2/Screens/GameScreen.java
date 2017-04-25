@@ -101,6 +101,8 @@ public class GameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                eat = true; //WORK in PROGRESS
                 Hstat.foodStat+=10;
+                if(Hstat.foodStat >100)
+                    Hstat.foodStat=100;
                 System.out.println(Hstat.foodStat);
             }
         });

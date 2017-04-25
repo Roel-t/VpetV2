@@ -5,54 +5,33 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="28513136107785"
+    timestamp="92121913846"
     token="678584667441038403"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="98" />
+        duration="1152" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="25" />
+        duration="464" />
     <task
         name="verifier"
-        duration="1" />
+        duration="11" />
 
     <artifact
-        location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
-        type="DEX" />
+        location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/outputs/apk/android-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="22850295034788"
+        timestamp="92121913846"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/outputs/apk/android-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="25610716728966"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="28373378635669"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="28513136107785"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>
