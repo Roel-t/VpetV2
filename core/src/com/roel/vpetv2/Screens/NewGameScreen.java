@@ -52,16 +52,21 @@ public class NewGameScreen implements Screen{
         this.game = game;
         nativep = np;
 
-
         SharedPref = Gdx.app.getPreferences("Status");      //Start the Hunger status at 100
         SharedPref.putFloat("HungerStatus",6);
         SharedPref.putFloat("HealthStatus",40);
         SharedPref.flush();
 
-        //DISABLED SO WE ALWAYS GO HERE FOR SETUP PURPOSES
+
         SharedPref = Gdx.app.getPreferences("General");
         SharedPref.putBoolean("ContinueGame",true);        //So we skip this screen after creating a new game
         SharedPref.putBoolean("FirstTime",true);
+
+
+        Date curDate = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy MM dd HH:mm");
+        String time = format.format(curDate);
+        SharedPref.putString("DaysSurvived",time);
         SharedPref.flush();
 
 

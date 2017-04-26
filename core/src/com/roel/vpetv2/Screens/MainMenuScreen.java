@@ -67,6 +67,7 @@ public class MainMenuScreen implements Screen {
         TextButton MainButton = new TextButton(Cont,skin,"default");
         MainButton.setColor(Color.CYAN);
         TextButton setting = new TextButton("Settings",skin,"default");
+        TextButton LeaderBoard = new TextButton("Leaderboards",skin,"default");
 
 
 
@@ -90,11 +91,13 @@ public class MainMenuScreen implements Screen {
             }
         });
 
-        table.add(WelcomeLabel).padBottom(stage.getHeight()/4);
+        table.add(WelcomeLabel).padBottom(stage.getHeight()/4).padTop(stage.getHeight()/4);
         table.row();
         table.add(MainButton);
         table.row();
         table.add(setting).pad(200,0,0,0);
+        table.row();
+        table.add(LeaderBoard).pad(200,0,0,0);
 
 
         stage.addActor(table);

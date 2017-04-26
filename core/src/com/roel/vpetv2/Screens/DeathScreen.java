@@ -18,6 +18,11 @@ import com.badlogic.gdx.utils.Align;
 import com.roel.vpetv2.NativePlatform;
 import com.roel.vpetv2.VirtualPet;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by roel on 4/21/17.
  */
@@ -29,6 +34,7 @@ public class DeathScreen implements Screen {
     Texture back,dead;
 
     Stage stage;
+    private int Days;
 
 
     private Preferences SharedPref;
@@ -48,6 +54,24 @@ public class DeathScreen implements Screen {
         SharedPref.putBoolean("ContinueGame",false);
         SharedPref.flush();
 
+        Days=0;
+
+        try{
+            SimpleDateFormat format = new SimpleDateFormat("yyyy MM dd HH:mm");
+
+            Date previous = format.parse(SharedPref.getString("DaysSurvived"));
+            Date curDate = new Date();
+            String time = format.format(curDate);
+            Date current = format.parse(time);
+            long diff = current.getTime() - previous.getTime();
+            long HoursPassed= TimeUnit.HOURS.convert(diff, TimeUnit.MILLISECONDS);
+            Days = (int)HoursPassed / 24;
+        } catch(ParseException e){
+            e.printStackTrace();
+        }
+
+
+
         Skin skin = new Skin(Gdx.files.internal("uiskin.json"));
         skin.getFont("default-font").getData().setScale(.7f,.7f);
 
@@ -65,14 +89,19 @@ public class DeathScreen implements Screen {
         String temp = SharedPref.getString("Name");
 
         Label nameLabel = new Label("Oh no "+temp+" Died!", skin);
-
+        String day=" days";
+        if(Days==1)
+            day= " day";
+        Label TimeSurvive = new Label(temp+" Survived "+Long.toString(Days)+day,skin);
+        TimeSurvive.setColor(Color.BLACK);
         nameLabel.setColor(Color.BLACK);
 
-        nameLabel.setPosition(Gdx.graphics.getWidth()/8,Gdx.graphics.getHeight()/1.5f);
-
+        nameLabel.setPosition(Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/1.5f);
+        TimeSurvive.setPosition(Gdx.graphics.getWidth()/8,Gdx.graphics.getHeight()/1.2f);
 
         stage.addActor(button);
         stage.addActor(nameLabel);
+        stage.addActor(TimeSurvive);
         dead = new Texture("ded.png");
         back = new Texture("back.png");
 
@@ -94,7 +123,6 @@ public class DeathScreen implements Screen {
         game.batch.begin();
         game.batch.draw(back,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         game.batch.draw(dead,Gdx.graphics.getWidth()/3,Gdx.graphics.getHeight()/10);
-
         game.batch.end();
         stage.act(delta);
         stage.draw();

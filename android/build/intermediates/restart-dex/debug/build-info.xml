@@ -5,26 +5,26 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="22790642894292"
+    timestamp="25285975766827"
     token="678584667441038403"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="188" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="888" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="44" />
     <task
         name="verifier"
-        duration="0" />
+        duration="29" />
 
     <artifact
-        location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-        type="RESOURCES" />
+        location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         timestamp="22666445397563"
@@ -39,6 +39,20 @@
         <artifact
             location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
             type="RESOURCES" />
+    </build>
+    <build
+        timestamp="25232526593266"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="25285975766827"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
