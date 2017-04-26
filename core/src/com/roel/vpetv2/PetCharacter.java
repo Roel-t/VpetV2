@@ -50,16 +50,16 @@ public class PetCharacter extends Image{
 
     public void updateAnimationStatus(float hunger,boolean eat)
     {
-            if (hunger > 75 && hunger <= 100) {
-                previousStatus = status;
-                status = status.idle;
-            } else if (hunger > 50 && hunger <= 75) {
-                previousStatus = status;
-                status = status.sad;
-            } else if (hunger <= 50) {
-                previousStatus = status;
-                status = status.supersad;
-            }
+        if (hunger > 75 && hunger <= 100) {
+            previousStatus = status;
+            status = status.idle;
+        } else if (hunger > 50 && hunger <= 75) {
+            previousStatus = status;
+            status = status.sad;
+        } else if (hunger <= 50) {
+            previousStatus = status;
+            status = status.supersad;
+        }
     }
 
 

@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -53,13 +54,14 @@ public class NewGameScreen implements Screen{
 
 
         SharedPref = Gdx.app.getPreferences("Status");      //Start the Hunger status at 100
-        SharedPref.putFloat("HungerStatus",100);
-        SharedPref.putFloat("HealthStatus",100);
+        SharedPref.putFloat("HungerStatus",6);
+        SharedPref.putFloat("HealthStatus",40);
         SharedPref.flush();
 
         //DISABLED SO WE ALWAYS GO HERE FOR SETUP PURPOSES
         SharedPref = Gdx.app.getPreferences("General");
         SharedPref.putBoolean("ContinueGame",true);        //So we skip this screen after creating a new game
+        SharedPref.putBoolean("FirstTime",true);
         SharedPref.flush();
 
 
@@ -104,7 +106,8 @@ public class NewGameScreen implements Screen{
                     String name = nameText.getText();
                     SharedPref.putString("Name",name);
                     SharedPref.flush();
-                    game.setScreen(new GameScreen(game,nativep));
+                    Button Hair = null;
+                    game.setScreen(new GameScreen(game,nativep, Hair));
                 }
             }
         });

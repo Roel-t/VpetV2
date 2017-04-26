@@ -22,7 +22,7 @@ public class HealthStatus extends Actor {
 
         update = Gdx.app.getPreferences("Status");
         HealthStat = update.getFloat("HealthStatus");
-
+        System.out.println("HealtStat(in class): "+ HealthStat);
         if(HealthStat>75)
             health = new Texture("healthSprites/ht1.png");
         else if (HealthStat>50)
@@ -39,14 +39,14 @@ public class HealthStatus extends Actor {
     {
         if(foodStat <=0)
         {
-            if(HealthStat < 0)
+            if(HealthStat <= 0)
                 return true;
             else
-            HealthStat -= 0.5f;
+                HealthStat -= 10;        // 0.5f
         }
         else if(foodStat > 50 && HealthStat<100)
         {
-            HealthStat +=0.1f;
+            HealthStat +=10;        //0.1f
         }
         return false;
 

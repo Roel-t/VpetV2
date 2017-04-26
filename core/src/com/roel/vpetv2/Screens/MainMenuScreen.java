@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -26,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by roel on 4/5/17.
  */
+
 
 public class MainMenuScreen implements Screen {
 
@@ -56,7 +58,7 @@ public class MainMenuScreen implements Screen {
         table.align(Align.center);
         table.setPosition(0,Gdx.graphics.getHeight()/1.5f);
         SharedPref = Gdx.app.getPreferences("General");
-        String Cont=" ";
+        String Cont="";
         if(!SharedPref.getBoolean("ContinueGame"))
             Cont = "New Game";
         else
@@ -82,10 +84,8 @@ public class MainMenuScreen implements Screen {
                     game.setScreen(new NewGameScreen(game,nativep));
                 else
                 {
-                    if(updateStatus())                                  //Pet Died
-                        game.setScreen(new DeathScreen(game,nativep));
-                    else
-                        game.setScreen(new GameScreen(game,nativep));           //Pet Alive
+                    Button Hair = null;
+                    game.setScreen(new GameScreen(game, nativep, Hair));
                 }
             }
         });
@@ -107,59 +107,7 @@ public class MainMenuScreen implements Screen {
 
 
     }
-    public boolean updateStatus()
-    {
-        // UPDATE THE STATUS OF Hunger BAR HERE AFTER
-        SharedPref = Gdx.app.getPreferences("General");
-        try{
-            SimpleDateFormat format = new SimpleDateFormat("yyyy MM dd HH:mm");
 
-            System.out.println("Last Time login time: "+ SharedPref.getString("LastTime"));
-            Date previous = format.parse(SharedPref.getString("LastTime"));
-
-            Date curDate = new Date();
-            String time = format.format(curDate);
-            Date current = format.parse(time);
-            long diff = current.getTime() - previous.getTime();
-            long MinutesPassed= TimeUnit.MINUTES.convert(diff, TimeUnit.MILLISECONDS);
-            System.out.println ("Minutes: " + MinutesPassed);
-
-            SharedPref = Gdx.app.getPreferences("Status");
-
-            float tempHunger= SharedPref.getFloat("HungerStatus");
-            System.out.println("TempHunger: "+ tempHunger);
-            float secs= MinutesPassed*60;
-            System.out.print("Seconds out: "+secs);
-            float hungerDeletion = (secs/10) * 0.1f;
-            System.out.println("Hunger Deletion: "+ hungerDeletion);
-            tempHunger -= hungerDeletion;
-            System.out.println("TempHunger after update: "+ tempHunger);
-            float tempHealth = SharedPref.getFloat("HealthStatus");
-
-            if(tempHunger<0)
-            {
-                float ab=Math.abs(tempHunger);
-                System.out.println("absolute value of hunger negative: "+ ab);
-                ab = (ab/0.1f)*10;      //ab is converted to seconds
-                System.out.println("Seconds being converted from temp hunger abs value:"+ab);
-                ab = (ab/10) * 0.5f;    // health subtraction
-                tempHealth -= ab;
-                System.out.println("Health: "+tempHealth);
-                if(tempHealth<=0)        //if Pet died during offline
-                    return true;
-                tempHunger=0;
-            }
-
-            SharedPref.putFloat("HealthStatus",tempHealth);
-            SharedPref.putFloat("HungerStatus",tempHunger);
-            SharedPref.flush();
-
-
-        } catch(ParseException e){
-            e.printStackTrace();
-        }
-        return false;
-    }
 
 
 

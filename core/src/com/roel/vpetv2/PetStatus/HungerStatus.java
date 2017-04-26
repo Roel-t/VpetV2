@@ -23,7 +23,7 @@ public class HungerStatus extends Actor {
         foodStat = update.getFloat("HungerStatus");
 
 
-        System.out.println("FoodStat: "+foodStat);
+        System.out.println("FoodStat(inside HungerStat): "+foodStat);
         if(foodStat>75)
             hunger = new Texture("hungerSprites/h1_redo.png");
         else if(foodStat>50)
@@ -35,7 +35,7 @@ public class HungerStatus extends Actor {
     }
     public void updateStats()
     {
-        foodStat -= 0.1;
+        foodStat -= 2;        //0.1
         if(foodStat<0)
             foodStat=0;
     }

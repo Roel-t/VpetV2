@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Apr 25 09:31:34 CDT 2017
+#Wed Apr 26 01:14:31 CDT 2017
 25.file=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug/healthSprites/ht3.png
 25.base=/Users/roel/Documents/Spring2017/Java/VpetV2/android/build/intermediates/assets/debug
 22.set=ASSET
